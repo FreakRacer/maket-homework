@@ -1,0 +1,178 @@
+@mixin text($weight, $size, $height, $color) {
+    font-weight: $weight;
+    font-size: $size;
+    line-height: $height;
+    color: $color;
+  };
+  @mixin box($width, $height, $radius, $bg, $padding) {
+    width: $width;
+    height: $height;
+    border-radius: $radius;
+    background-color: $bg;
+    padding: $padding;
+  };
+
+
+// mixins
+
+body{
+    font-family: "Fira Sans", sans-serif;
+    background-color: #0C1117;
+   
+}
+
+.container{
+    max-width: 1440px;
+    margin: auto;
+}
+// head
+
+.left__side{
+    position: relative;
+    ul{
+        transform: rotate(270deg);
+        position: absolute;
+        top: 500px;
+        left: -130px;
+        -moz-column-gap: 50px;
+        column-gap: 50px;
+        a{
+            @include text(500, 18px, 21px, white);
+        }
+        a:hover{
+            color: #406faacb;
+            transition: all 0.3s;
+            cursor: pointer;
+            
+        }
+    }
+        
+        img{
+            
+            position: absolute;
+            top: -70px;
+            left: 60px;
+            height: 750px;
+        
+        }
+    }
+  
+// left side
+
+.navbar{
+    padding-left: 120px ;
+    column-gap: 390px;
+    padding-top: 41px;
+
+    img{
+        width: 155px;
+        height: 52px;
+        cursor: pointer;
+    }
+    .navbar__menu{
+        column-gap: 98px;
+        ul{
+            list-style: none;
+            column-gap: 60px;
+            a{
+                transition: all 0.3s;
+                @include text(500, 20px, 24px, white);
+            }
+            a:hover{
+                color: #003ADB;
+                transition: all 0.3s;
+                cursor: pointer;
+            }
+        }
+        svg{
+            margin-right: 120px;
+            transition: all 0.3s;
+
+        }
+        path:hover{
+            fill: #003ADB;
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+    }
+}
+
+// navbar
+
+.main{
+    padding-left: 238px;
+    padding-top: 151px;
+    column-gap: 88px;
+    .main__img{
+        border-radius: 90px 0 0 0;
+        max-width: 926px;
+        height: 620px;
+    }
+    .main__text{
+        
+        h1{
+            @include text(700, 85px, 102px, white);
+        }
+        p{
+            width: 668px;
+            padding-top: 29px;
+            @include text(300, 20px, 28px, white);
+        }
+        button{
+            margin: 59px 0;
+            padding: 9px 25px; 
+            @include text(400, 18px, 28px, white);
+            @include box(142px, 45px,30px, #003ADB, 0 );
+        }
+        .main__load{
+            column-gap: 5px;
+            p{
+                padding: 0;
+                width: 33px;
+                height: 38px;
+                @include text(700, 32px, 38px, white);
+            }
+            img{
+               display: block;
+               width: 137px;
+               
+            }
+        }
+    }
+}
+
+// main 
+
+.about{
+    h2{
+        text-align: center;
+        @include text(500, 48px, 57px, white);
+    }
+    &__items{
+        display: grid;
+        column-gap: 13px;
+        row-gap: 13px;
+        grid-template-columns: 350px 350px  350px 350px ;
+        .about__item{
+            background-color: #1B2837;
+            padding: 36px 0  0 24px;
+            height: 350px;
+            h3{
+                @include text(800, 24px, 28px, white);
+            }
+            p{
+                padding: 36px 0;
+                @include text(400, 16px, 24px, white);
+
+            }
+            a{
+                padding-bottom: 36px;
+                text-decoration:underline;
+                @include text(500, 16px, 24px, white);
+            }
+        }
+    }
+}
+
+
+
