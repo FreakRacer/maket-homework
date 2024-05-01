@@ -1,3 +1,5 @@
+/*
+
 let arr = [33, 2, 45, 6];
 
 let arr2 = ['agg', ...arr , 30];
@@ -67,6 +69,12 @@ function gt(...args){
 };
 
 console.log(gt(1,2,3,4,5,6,7,8));
+
+*/
+
+let a = document.getElementById("big");
+
+console.log(a)
 
 
 

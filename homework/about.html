@@ -1,0 +1,68 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>second page</title>
+    <link rel="stylesheet" href="about.css" />
+  </head>
+  <body>
+    <div class="main">
+      <div class="big" id="big">
+        <div class="title">text</div>
+      </div>
+
+      <div class="titles">
+        <div id="item__1" class="title__item">
+          <div class="title__img">
+            <img src="img/our-3.jpg" alt="" />
+          </div>
+          <div class="title__title">text</div>
+        </div>
+        <div id="item__2" class="title__item">
+          <div class="title__img">
+            <img src="img/our-1.jpg" alt="" />
+          </div>
+          <div class="title__title">text</div>
+        </div>
+        <div id="item__3" class="title__item">
+          <div class="title__img">
+            <img src="img/our-2.jpg" alt="" />
+          </div>
+          <div class="title__title">text</div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      let big = document.getElementById("big");
+
+      let item__1 = document.getElementById("item__1");
+      let item__2 = document.getElementById("item__2");
+      let item__3 = document.getElementById("item__3");
+
+      item__1.onclick = active;
+      item__2.onclick = active;
+      item__3.onclick = active;
+
+      item__1.addEventListener("click", toggle);
+      item__2.addEventListener("click", toggle);
+      item__3.addEventListener("click", toggle);
+
+      function active() {
+        item__1.removeAttribute("style");
+        item__2.removeAttribute("style");
+        item__3.removeAttribute("style");
+        this.style.backgroundColor = "rgba(172, 172, 255, 0.339";
+      }
+
+      function toggle() {
+        let src = this.firstElementChild.firstElementChild.src;
+        let text = this.lastElementChild.innerText;
+
+        big.style.backgroundImage = `url(${src})`;
+        big.firstElementChild.innerText = text;
+      }
+      console.log(item__1.lastElementChild.innerText);
+    </script>
+  </body>
+</html>
